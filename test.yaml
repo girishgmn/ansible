@@ -1,0 +1,16 @@
+---
+- hosts: all
+  tasks:
+  - name: update repository 
+    apt:
+      update_cache: yes
+  - name: install packages
+    apt:
+      name: git
+      state: latest
+    become: yes 
+  - name: install packages
+    apt:
+      name: wget
+      state: present
+    become: yes
